@@ -1,0 +1,30 @@
+# NIGHTSALVO // CTF WRITEUPS
+
+Every flag has a story. This is where they are told.
+
+An archive of capture the flag writeups by **Gavin Blacklock**. Every writeup here is for a challenge genuinely solved in the lab: the reasoning path, the working commands or scripts, and the captured flag, written down so the next run is faster than the last.
+
+## Status
+
+- **Solved and published:** 11
+- **Events:** 1 (DownUnderCTF 2024)
+- **Categories covered:** crypto, web, forensics, reversing, pwn, misc
+- **Current tier:** INITIATE (see [TIERS.md](TIERS.md))
+
+## Index
+
+The full table of writeups lives in [INDEX.md](INDEX.md), or browse [`writeups/`](writeups/) by event.
+
+## Site
+
+The companion site lists every writeup by category with the tier ladder: published from the `docs/` folder of this repo via GitHub Pages.
+
+## Rules of the archive
+
+- A challenge is written up only after it is solved. No solve, no writeup.
+- Flags from retired and practice challenges are shown in full.
+- Writeups describe the intended path and the path actually taken, including the dead ends that mattered.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

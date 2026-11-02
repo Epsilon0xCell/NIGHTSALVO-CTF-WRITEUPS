@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIGHTSALVO // CTF WRITEUPS</title>
+<meta name="description" content="Capture the flag writeups by Gavin Blacklock. Every flag has a story. This is where they are told.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="kicker">NIGHTSALVO</p>
+    <h1>CTF WRITEUPS</h1>
+    <p class="tagline">Every flag has a story. This is where they are told.</p>
+    <p class="byline">An archive by Gavin Blacklock. Every writeup here is for a challenge genuinely solved in the lab, with the reasoning path, the working commands, and the captured flag.</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-num">11</span><span class="stat-label">challenges solved</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">event</span></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-label">categories</span></div>
+      <div class="stat"><span class="stat-num tier">INITIATE</span><span class="stat-label">current tier</span></div>
+    </div>
+    <nav class="cat-nav">
+      <a href="#crypto">Crypto</a>
+      <a href="#web">Web</a>
+      <a href="#forensics">Forensics</a>
+      <a href="#reversing">Reversing</a>
+      <a href="#pwn">Pwn</a>
+      <a href="#misc">Misc / OSINT</a>
+      <a href="#tiers">Tier Ladder</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="crypto" class="cat">
+  <h2>Crypto</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/shufflebox.md">shufflebox</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A fixed 16 character permutation shuffles every block. Two known plaintext pairs recover the permutation outright, and inverting it unshuffles the censored line.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/sunzi-perfect-math-class.md">Sun Zi's Perfect Math Class</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>One RSA message encrypted with e = 3 under three different moduli. CRT recombines the ciphertexts into m cubed over the integers: Hastad's broadcast attack, finished with an exact cube root.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/v-for-vieta.md">V for Vieta</a></h3>
+      <p class="meta">DownUnderCTF 2024, easy</p>
+      <p>An interactive server demands huge solutions to (a^2 + ab + b^2) / (2ab + 1) = k. Vieta jumping climbs from the seed (0, sqrt(k)) until both values clear 2048 bits.</p>
+    </article>
+  </div>
+</section>
+
+<section id="web" class="cat">
+  <h2>Web</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/parrot-the-emu.md">Parrot the Emu</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A Flask parrot passes user input straight into render_template_string. One SSTI payload through a Jinja2 global reads the flag file off the server.</p>
+    </article>
+  </div>
+</section>
+
+<section id="forensics" class="cat">
+  <h2>Forensics</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/babys-first-forensics.md">Baby's First Forensics</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A packet capture of a scan in progress. The scanner signs its own work: the User-Agent in every request names the tool and its version.</p>
+    </article>
+  </div>
+</section>
+
+<section id="reversing" class="cat">
+  <h2>Reversing</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/jmp-flag.md">jmp flag</a></h3>
+      <p class="meta">DownUnderCTF 2024, easy</p>
+      <p>A stripped binary runs each input character through a handler that conditionally flips one bit of a state word. Model the machine, then search for the 64 moves that clear every bit.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/sssshhhh.md">sssshhhh</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A Go SSH server with a hardcoded password and a hidden command. Authenticate, run the command, and the server prints the flag from its own environment.</p>
+    </article>
+  </div>
+</section>
+
+<section id="pwn" class="cat">
+  <h2>Pwn</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/vector-overflow.md">vector overflow</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>An unbounded read sits right before a std::vector. Overflow the buffer, aim the vector's pointers back into the input itself, and the element check reads the winning string out of your own payload.</p>
+    </article>
+  </div>
+</section>
+
+<section id="misc" class="cat">
+  <h2>Misc / OSINT</h2>
+  <div class="cards">
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/intercepted-transmissions.md">Intercepted Transmissions</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A 441 bit CCIR476 transmission. The constant 4 of 7 mark ratio confirms the framing, and a stateful LTRS/FIGS decode, verified by re-encoding, gives up the message.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/tldr-please-summarise.md">tldr please summarise</a></h3>
+      <p class="meta">DownUnderCTF 2024, beginner</p>
+      <p>A Word document with a white on white prompt injection at 2 point type, ordering any AI that reads it to download and run a script. The solve is finding it and refusing it.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/wackyrecipe.md">Wacky Recipe</a></h3>
+      <p class="meta">DownUnderCTF 2024, easy</p>
+      <p>A program written in Chef with two redacted ingredient values. Each block is one arithmetic expression; solving the system against the flag wrapper gives pain = 27 and effort = 21.</p>
+    </article>
+  </div>
+</section>
+
+<section id="tiers" class="cat">
+  <h2>Tier Ladder</h2>
+  <p class="tier-note">Counted on published, genuinely solved writeups only. Current tier: <strong>INITIATE</strong>, at 11 writeups across 6 categories and 1 event.</p>
+  <table class="ladder">
+    <thead><tr><th>Tier</th><th>Requirement</th></tr></thead>
+    <tbody>
+      <tr class="reached"><td>INITIATE</td><td>10 writeups across 3 categories</td></tr>
+      <tr><td>OPERATOR</td><td>25 writeups across 5 categories and 3 events</td></tr>
+      <tr><td>BREAKER</td><td>50 writeups across all 6 categories and 5 events</td></tr>
+      <tr><td>SALVO</td><td>100 writeups and 10 events, plus a first live CTFtime event played under the NightSalvo name</td></tr>
+      <tr><td>MYTH</td><td>250 writeups, 20 events, a top 25 percent finish in a rated live event, and writeups referenced by other people</td></tr>
+      <tr><td>LEGEND</td><td>500 writeups, 40 events, a top 10 percent finish in a major rated event, and community citations of the archive</td></tr>
+    </tbody>
+  </table>
+  <p class="canon">Beyond the ladder: CANON is when other players learn from the archive before their own events; it is conferred, never claimed.</p>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>NIGHTSALVO // CTF WRITEUPS, by Gavin Blacklock. Source: <a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS">github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS</a></p>
+  </div>
+</footer>
+</body>
+</html>
