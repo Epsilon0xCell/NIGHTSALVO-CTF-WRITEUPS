@@ -1,6 +1,6 @@
 # Index of Writeups
 
-Every published writeup, by event. Counted total: **21**.
+Every published writeup, by event. Counted total: **25**.
 
 | Event | Challenge | Category | Difficulty | Writeup |
 |---|---|---|---|---|
@@ -25,3 +25,7 @@ Every published writeup, by event. Counted total: **21**.
 | DownUnderCTF 2020 | babyrsa | crypto | medium | [babyrsa](writeups/downunderctf-2020/babyrsa.md) |
 | DownUnderCTF 2020 | Hex Shift Cipher | crypto | medium | [hex-shift-cipher](writeups/downunderctf-2020/hex-shift-cipher.md) |
 | DownUnderCTF 2020 | In a pickle | misc | easy | [in-a-pickle](writeups/downunderctf-2020/in-a-pickle.md) |
+| Google CTF 2020 | Beginner | reversing | beginner | [beginner](writeups/google-ctf-2020/beginner.md) |
+| Google CTF 2021 | H1 | crypto | - | [h1](writeups/google-ctf-2021/h1.md) |
+| Google CTF 2023 | Symatrix | misc | - | [symatrix](writeups/google-ctf-2023/symatrix.md) |
+| Google CTF 2023 | NPC | misc | - | [npc](writeups/google-ctf-2023/npc.md) |
