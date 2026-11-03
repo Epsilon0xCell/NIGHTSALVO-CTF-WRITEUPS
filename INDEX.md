@@ -1,6 +1,6 @@
 # Index of Writeups
 
-Every published writeup, by event. Counted total: **25**.
+Every published writeup, by event. Counted total: **35**.
 
 | Event | Challenge | Category | Difficulty | Writeup |
 |---|---|---|---|---|
@@ -29,3 +29,13 @@ Every published writeup, by event. Counted total: **25**.
 | Google CTF 2021 | H1 | crypto | - | [h1](writeups/google-ctf-2021/h1.md) |
 | Google CTF 2023 | Symatrix | misc | - | [symatrix](writeups/google-ctf-2023/symatrix.md) |
 | Google CTF 2023 | NPC | misc | - | [npc](writeups/google-ctf-2023/npc.md) |
+| DownUnderCTF 2021 | Substitution Cipher I | crypto | beginner | [substitution-cipher-i](writeups/downunderctf-2021/substitution-cipher-i.md) |
+| DownUnderCTF 2021 | Retro | forensics | easy | [retro](writeups/downunderctf-2021/retro.md) |
+| DownUnderCTF 2023 | Complementary | crypto | beginner | [complementary](writeups/downunderctf-2023/complementary.md) |
+| DownUnderCTF 2023 | Randomly Chosen | crypto | beginner | [randomly-chosen](writeups/downunderctf-2023/randomly-chosen.md) |
+| DownUnderCTF 2023 | Flag Art | misc | beginner | [flag-art](writeups/downunderctf-2023/flag-art.md) |
+| DownUnderCTF 2023 | apbq RSA I | crypto | - | [apbq-rsa-i](writeups/downunderctf-2023/apbq-rsa-i.md) |
+| LA CTF 2024 | Very Hot | crypto | - | [very-hot](writeups/lactf-2024/very-hot.md) |
+| LA CTF 2024 | Selamat Pagi | crypto | - | [selamat-pagi](writeups/lactf-2024/selamat-pagi.md) |
+| UIUCTF 2024 | Naptime | crypto | - | [naptime](writeups/uiuctf-2024/naptime.md) |
+| corCTF 2024 | The Conspiracy | forensics | - | [the-conspiracy](writeups/corctf-2024/the-conspiracy.md) |

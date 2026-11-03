@@ -20,10 +20,10 @@ Every tier change is announced to the owner when it lands. The announcement name
 ## Current standing
 
 - **Tier now: OPERATOR**
-- Published writeups: 25
+- Published writeups: 35
 - Categories: 6 (crypto, web, forensics, reversing, pwn, misc)
-- Events: 6 (DownUnderCTF 2020, DownUnderCTF 2022, DownUnderCTF 2024, Google CTF 2020, Google CTF 2021, Google CTF 2023)
-- Next tier: BREAKER, needs 50 writeups across all 6 categories and 5 events. Categories and events are already met; the writeup count is the remaining gap.
+- Events: 11 (DownUnderCTF 2020, DownUnderCTF 2021, DownUnderCTF 2022, DownUnderCTF 2023, DownUnderCTF 2024, Google CTF 2020, Google CTF 2021, Google CTF 2023, LA CTF 2024, UIUCTF 2024, corCTF 2024)
+- Next tier: BREAKER, needs 50 writeups across all 6 categories and 5 events. Categories and events are already met; 15 writeups remain (35 of 50).
 
 ## Tier history
 
