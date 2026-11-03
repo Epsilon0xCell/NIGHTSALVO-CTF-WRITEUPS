@@ -6,8 +6,8 @@ An archive of capture the flag writeups by **Gavin Blacklock**. Every writeup he
 
 ## Status
 
-- **Solved and published:** 11
-- **Events:** 1 (DownUnderCTF 2024)
+- **Solved and published:** 21
+- **Events:** 3 (DownUnderCTF 2020, DownUnderCTF 2022, DownUnderCTF 2024)
 - **Categories covered:** crypto, web, forensics, reversing, pwn, misc
 - **Current tier:** INITIATE (see [TIERS.md](TIERS.md))
 

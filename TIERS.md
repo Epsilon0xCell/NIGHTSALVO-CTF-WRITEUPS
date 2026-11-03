@@ -20,9 +20,9 @@ Every tier change is announced to the owner when it lands. The announcement name
 ## Current standing
 
 - **Tier now: INITIATE**
-- Published writeups: 11
+- Published writeups: 21
 - Categories: 6 (crypto, web, forensics, reversing, pwn, misc)
-- Events: 1 (DownUnderCTF 2024)
+- Events: 3 (DownUnderCTF 2020, DownUnderCTF 2022, DownUnderCTF 2024)
 - Next tier: OPERATOR, needs 25 writeups across 5 categories and 3 events.
 
 ## Tier history

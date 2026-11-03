@@ -1,0 +1,88 @@
+# babyrsa
+
+- **Event:** DownUnderCTF 2020
+- **Category:** crypto
+- **Difficulty:** medium
+- **Author:** joseph#8210
+
+## Summary
+
+"This is just RSA for babies!" The handout is the generator and its output: a 2048-bit modulus `n = p*q`, a textbook RSA ciphertext `c` under `e = 0x10001`, and one extra value, `s = pow(557*p - 127*q, n - p - q, n)`. That extra value is the whole challenge. Read correctly, it hands over a linear relation between the two primes, and a linear relation plus the product is a factorisation.
+
+## First look
+
+```python
+p, q = getPrime(1024), getPrime(1024)
+n = p*q
+e = 0x10001
+
+s = pow(557*p - 127*q, n - p - q, n)
+
+c = pow(bytes_to_long(flag), e, n)
+```
+
+The exponent in `s` is the tell. `n - p - q = pq - p - q = (p-1)(q-1) - 1 = phi(n) - 1`. Raising a base to `phi(n) - 1` modulo `n` is, by Euler's theorem, the same as raising it to the power `-1`: for any base coprime to `n`, `s` is the modular inverse of `557*p - 127*q` modulo `n`. (The base here is coprime unless it happens to share a factor with `p` or `q`; the solve succeeding is the proof it does not.)
+
+## What I tried first
+
+**Treating `s` as a second ciphertext.** My first read was that `s` encrypted some related plaintext and might fall to the usual small-message or common-modulus tricks. It does not: the base is not a message, it is a linear combination of the secret primes themselves, and the exponent is not `e`, it is `phi(n) - 1`. Staring at the exponent until it factored as `(p-1)(q-1) - 1` is what turned this from "RSA with something extra" into algebra.
+
+## The breakthrough
+
+If `s` is the inverse of `t = 557p - 127q` modulo `n`, then `u = s^{-1} mod n` recovers `t` up to a multiple of `n`. Now bound it: `p` and `q` are 1024-bit, so `|t| <= 557*p + 127*q < 2^1034`, which is far below `n` (2048-bit). So `t` is either `u` itself or `u - n`, the negative case covering `127q > 557p`. Two candidates, no search.
+
+From there it is a quadratic. Substitute `q = n/p` into `t = 557p - 127q`:
+
+```text
+557 p^2 - t p - 127 n = 0
+```
+
+Solve it over the integers: the discriminant `D = t^2 + 4*557*127*n` must be a perfect square, and then `p = (t + sqrt(D)) / (2*557)`. Try both candidates for `t`, keep the one where `D` is a square and `p` divides `n`, and the modulus is factored. Standard RSA decryption finishes the job.
+
+## Solve
+
+```python
+from math import isqrt
+
+n = 19574201286059123715221634877085223155972629451020572575626246458715199192950082143183900970133840359007922584516900405154928253156404028820410452946729670930374022025730036806358075325420793866358986719444785030579682635785758091517397518826225327945861556948820837789390500920096562699893770094581497500786817915616026940285194220703907757879335069896978124429681515117633335502362832425521219599726902327020044791308869970455616185847823063474157292399830070541968662959133724209945293515201291844650765335146840662879479678554559446535460674863857818111377905454946004143554616401168150446865964806314366426743287
+s = 3737620488571314497417090205346622993399153545806108327860889306394326129600175543006901543011761797780057015381834670602598536525041405700999041351402341132165944655025231947620944792759658373970849932332556577226700342906965939940429619291540238435218958655907376220308160747457826709661045146370045811481759205791264522144828795638865497066922857401596416747229446467493237762035398880278951440472613839314827303657990772981353235597563642315346949041540358444800649606802434227470946957679458305736479634459353072326033223392515898946323827442647800803732869832414039987483103532294736136051838693397106408367097
+c = 7000985606009752754441861235720582603834733127613290649448336518379922443691108836896703766316713029530466877153379023499681743990770084864966350162010821232666205770785101148479008355351759336287346355856788865821108805833681682634789677829987433936120195058542722765744907964994170091794684838166789470509159170062184723590372521926736663314174035152108646055156814533872908850156061945944033275433799625360972646646526892622394837096683592886825828549172814967424419459087181683325453243145295797505798955661717556202215878246001989162198550055315405304235478244266317677075034414773911739900576226293775140327580
+e = 0x10001
+
+u = pow(s, -1, n)
+p = q = None
+for t in (u, u - n):
+    D = t * t + 4 * 557 * 127 * n
+    r = isqrt(D)
+    if r * r == D and (t + r) % (2 * 557) == 0:
+        p = (t + r) // (2 * 557)
+        if n % p == 0:
+            q = n // p
+            break
+assert p and q, 'factorisation failed'
+print('p =', p)
+print('q =', q)
+phi = (p - 1) * (q - 1)
+d = pow(e, -1, phi)
+m = pow(c, d, n)
+flag = m.to_bytes((m.bit_length() + 7) // 8, 'big')
+print('flag:', flag)
+```
+
+Run:
+
+```text
+$ python3 babyrsa_solve.py
+p = 142330230705328145595283676471239195558844969347785580004001554538877181973869318257471293219512143354019499347549183531116588694914100319083003689276059546015147159203569933280678564050512749524779927522346194056170602443980796876645843108623490893506040488132906421994550401879219627124260709500352428249413
+q = 137526660281921131221818797107719332505145627503966517923070280130875449016216283557144366594925577458093232503891037595787957060953687166721367679274343931891139309595758625134752102980837611457006046816552168551932124923087090435785959383128842381406539452056309367997750395905747259198693037451326868517899
+flag: b'DUCTF{e4sy_RSA_ch4ll_t0_g3t_st4rt3d}'
+```
+
+
+## Flag
+
+```text
+DUCTF{e4sy_RSA_ch4ll_t0_g3t_st4rt3d}
+```
+
+Sanity check: the candidate `t` that works makes the discriminant an exact perfect square and gives a `p` that divides `n` with zero remainder, which for a 2048-bit semiprime is not a coincidence that can happen by chance. Decrypting `c` with the recovered `phi(n)` then yields clean ASCII in flag format.
