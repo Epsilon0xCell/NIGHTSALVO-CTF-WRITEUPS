@@ -15,10 +15,10 @@
     <p class="tagline">Every flag has a story. This is where they are told.</p>
     <p class="byline">An archive by Gavin Blacklock. Every writeup here is for a challenge genuinely solved in the lab, with the reasoning path, the working commands, and the captured flag.</p>
     <div class="stats">
-      <div class="stat"><span class="stat-num">11</span><span class="stat-label">challenges solved</span></div>
-      <div class="stat"><span class="stat-num">1</span><span class="stat-label">event</span></div>
+      <div class="stat"><span class="stat-num">35</span><span class="stat-label">challenges solved</span></div>
+      <div class="stat"><span class="stat-num">11</span><span class="stat-label">events</span></div>
       <div class="stat"><span class="stat-num">6</span><span class="stat-label">categories</span></div>
-      <div class="stat"><span class="stat-num tier">INITIATE</span><span class="stat-label">current tier</span></div>
+      <div class="stat"><span class="stat-num tier">OPERATOR</span><span class="stat-label">current tier</span></div>
     </div>
     <nav class="cat-nav">
       <a href="#crypto">Crypto</a>
@@ -52,6 +52,71 @@
       <p class="meta">DownUnderCTF 2024, easy</p>
       <p>An interactive server demands huge solutions to (a^2 + ab + b^2) / (2ab + 1) = k. Vieta jumping climbs from the seed (0, sqrt(k)) until both values clear 2048 bits.</p>
     </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/three-line-crypto.md">three-line-crypto</a></h3>
+      <p class="meta">DownUnderCTF 2024</p>
+      <p>A 16-byte key selected by the previous plaintext byte protects 5,611 bytes of prose. A trigram model and a hot simulated annealing run recover the key after colder searches stall.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2022/baby-arx.md">baby-arx</a></h3>
+      <p class="meta">DownUnderCTF 2022, beginner</p>
+      <p>Two rotate-xor byte maps feed adjacent flag bytes into each output. Walking the chain from the known prefix and following the two possible preimages at each step recovers the full state.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2020/rot-i.md">rot-i</a></h3>
+      <p class="meta">DownUnderCTF 2020, beginner</p>
+      <p>Each letter shifts by its position in the whole message, counting spaces and punctuation. Reversing that position-dependent shift inside the matching case alphabet restores the text directly.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2020/babyrsa.md">babyrsa</a></h3>
+      <p class="meta">DownUnderCTF 2020, medium</p>
+      <p>An extra RSA value is the modular inverse of 557p - 127q. Recovering that linear relation turns factoring the modulus into solving one quadratic.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2020/hex-shift-cipher.md">Hex Shift Cipher</a></h3>
+      <p class="meta">DownUnderCTF 2020, medium</p>
+      <p>Forty-four known plaintext characters turn a shuffled hex cipher into a linear system over GF(2). The permutation requirement narrows the key completions, and every valid one gives the same plaintext.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/google-ctf-2021/h1.md">H1</a></h3>
+      <p class="meta">Google CTF 2021</p>
+      <p>Repeated-byte ECDSA nonces shrink a 512-bit ECDH exchange to a hidden number problem. Recovering the signing key and public key exposes the shared secret and the encrypted flag message.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2021/substitution-cipher-i.md">Substitution Cipher I</a></h3>
+      <p class="meta">DownUnderCTF 2021, beginner</p>
+      <p>A quadratic polynomial substitutes for a cipher table. Because it is one-to-one over byte values, solving the quadratic inverts each output character.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2023/complementary.md">Complementary</a></h3>
+      <p class="meta">DownUnderCTF 2023, beginner</p>
+      <p>The two flag halves are multiplied as integers, but their ASCII structure gives the product an unusually rich factorization. Searching the factor splits finds the one framed by the flag format.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2023/randomly-chosen.md">Randomly Chosen</a></h3>
+      <p class="meta">DownUnderCTF 2023, beginner</p>
+      <p>Only 1,337 possible inner seeds drive 305 sampled characters. Replaying each seed and rejecting inconsistent positions leaves exactly one seed and the full flag.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2023/apbq-rsa-i.md">apbq RSA I</a></h3>
+      <p class="meta">DownUnderCTF 2023</p>
+      <p>Two hints of the form a p + b q conceal the factors of an RSA modulus. Combining the hints cancels p, and a batch gcd search over the small a values finds q.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/lactf-2024/very-hot.md">Very Hot</a></h3>
+      <p class="meta">LA CTF 2024</p>
+      <p>Three RSA primes sit at p, p + 6, and p + 12, putting the modulus near a perfect cube. A short scan around its integer cube root finds p and the other factors follow from their offsets.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/lactf-2024/selamat-pagi.md">Selamat Pagi</a></h3>
+      <p class="meta">LA CTF 2024</p>
+      <p>The challenge title is itself a crib for an Indonesian substitution cipher. The flag format and word patterns then resolve each remaining word without recovering the whole key.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/uiuctf-2024/naptime.md">Naptime</a></h3>
+      <p class="meta">UIUCTF 2024</p>
+      <p>A Merkle-Hellman knapsack uses only eight public weights per character. Enumerating all 256 subset sums with the generator bit convention decodes each byte directly.</p>
+    </article>
   </div>
 </section>
 
@@ -74,6 +139,21 @@
       <p class="meta">DownUnderCTF 2024, beginner</p>
       <p>A packet capture of a scan in progress. The scanner signs its own work: the User-Agent in every request names the tool and its version.</p>
     </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/macromagic.md">Macro Magic</a></h3>
+      <p class="meta">DownUnderCTF 2024, easy</p>
+      <p>A spreadsheet macro XORs the value in cell A1 with the key MonkeyMagic and sends the result as decimal bytes in a web request. Static analysis identifies the matching capture run and reverses it without executing the macro.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2021/retro.md">Retro</a></h3>
+      <p class="meta">DownUnderCTF 2021, easy</p>
+      <p>The event logo pixels carry no payload. The flag sits in plain text in the image XMP metadata, inside the Dublin Core creator field.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/corctf-2024/the-conspiracy.md">The Conspiracy</a></h3>
+      <p class="meta">corCTF 2024</p>
+      <p>A small capture carries paired lists of products and keys in TCP payloads. Dividing each pair element by element turns the chat back into readable text.</p>
+    </article>
   </div>
 </section>
 
@@ -89,6 +169,16 @@
       <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/sssshhhh.md">sssshhhh</a></h3>
       <p class="meta">DownUnderCTF 2024, beginner</p>
       <p>A Go SSH server with a hardcoded password and a hidden command. Authenticate, run the command, and the server prints the flag from its own environment.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2022/ezpz-rev.md">ezpz rev</a></h3>
+      <p class="meta">DownUnderCTF 2022, easy</p>
+      <p>A stripped ELF hides a Star Battle puzzle defined by four validators and an embedded region map. A backtracking solver finds the grid, and the unmodified binary prints the flag.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/google-ctf-2020/beginner.md">Beginner</a></h3>
+      <p class="meta">Google CTF 2020, beginner</p>
+      <p>The binary compares its input with that same input after a shuffle, add, and xor transform. Treating the flag as a fixed point and solving the extracted constants with Z3 produces the accepted string.</p>
     </article>
   </div>
 </section>
@@ -122,17 +212,47 @@
       <p class="meta">DownUnderCTF 2024, easy</p>
       <p>A program written in Chef with two redacted ingredient values. Each block is one arithmetic expression; solving the system against the flag wrapper gives pain = 27 and effort = 21.</p>
     </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2024/dnadecay.md">DNAdecay</a></h3>
+      <p class="meta">DownUnderCTF 2024, easy</p>
+      <p>A Ruby program is encoded as DNA art, with bases lost to decay. Exact-column parsing and complementary base pairs repair the damaged rungs, while context resolves the few positions where both bases are gone.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2022/last-digit.md">last digit</a></h3>
+      <p class="meta">DownUnderCTF 2022, easy</p>
+      <p>A last-digit service becomes a comparison oracle through the Python integer conversion limit of 4,300 digits. Threshold queries and binary search recover the flag integer.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2020/in-a-pickle.md">In a pickle</a></h3>
+      <p class="meta">DownUnderCTF 2020, easy</p>
+      <p>A 397-byte file is a Python pickle holding a position map. Disassembling it instead of loading it, sorting the keys, and converting the values rebuilds the message safely.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/google-ctf-2023/symatrix.md">Symatrix</a></h3>
+      <p class="meta">Google CTF 2023</p>
+      <p>A mirrored PNG hides bits in pixels whose green channel rises by exactly one. Reading the blue channel differences at those marked spots restores the hidden bit string.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/google-ctf-2023/npc.md">NPC</a></h3>
+      <p class="meta">Google CTF 2023</p>
+      <p>A Hamiltonian path through a letter graph spells a password from Constitution words. The graph and word list leave only 13 candidates, and the eleventh decrypts the age-encrypted file.</p>
+    </article>
+    <article class="card">
+      <h3><a href="https://github.com/Epsilon0xCell/NIGHTSALVO-CTF-WRITEUPS/blob/main/writeups/downunderctf-2023/flag-art.md">Flag Art</a></h3>
+      <p class="meta">DownUnderCTF 2023, beginner</p>
+      <p>Each byte is printed as four symbols giving its residues modulo 2, 3, 5, and 7. The Chinese Remainder Theorem turns each group of symbols back into the exact character.</p>
+    </article>
   </div>
 </section>
 
 <section id="tiers" class="cat">
   <h2>Tier Ladder</h2>
-  <p class="tier-note">Counted on published, genuinely solved writeups only. Current tier: <strong>INITIATE</strong>, at 11 writeups across 6 categories and 1 event.</p>
+  <p class="tier-note">Counted on published, genuinely solved writeups only. Current tier: <strong>OPERATOR</strong>, at 35 writeups across 6 categories and 11 events. Events: DownUnderCTF 2020, DownUnderCTF 2021, DownUnderCTF 2022, DownUnderCTF 2023, DownUnderCTF 2024, Google CTF 2020, Google CTF 2021, Google CTF 2023, LA CTF 2024, UIUCTF 2024, corCTF 2024. Next tier: BREAKER, at 50 writeups across all 6 categories and 5 events; categories and events are already met, so 15 writeups remain.</p>
   <table class="ladder">
     <thead><tr><th>Tier</th><th>Requirement</th></tr></thead>
     <tbody>
       <tr class="reached"><td>INITIATE</td><td>10 writeups across 3 categories</td></tr>
-      <tr><td>OPERATOR</td><td>25 writeups across 5 categories and 3 events</td></tr>
+      <tr class="reached"><td>OPERATOR</td><td>25 writeups across 5 categories and 3 events</td></tr>
       <tr><td>BREAKER</td><td>50 writeups across all 6 categories and 5 events</td></tr>
       <tr><td>SALVO</td><td>100 writeups and 10 events, plus a first live CTFtime event played under the NightSalvo name</td></tr>
       <tr><td>MYTH</td><td>250 writeups, 20 events, a top 25 percent finish in a rated live event, and writeups referenced by other people</td></tr>
